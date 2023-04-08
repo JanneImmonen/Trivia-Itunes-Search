@@ -12,7 +12,7 @@ function TriviaSearch() {
 
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [fetchData]);
 
   const fetchData = async () => {
     try {
