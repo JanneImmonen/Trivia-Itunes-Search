@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import axios from "axios";
 import { Container, Form, Button, Table } from "react-bootstrap";
 
@@ -10,11 +10,7 @@ function TriviaSearch() {
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("");
 
-  useEffect(() => {
-    fetchData();
-  }, [fetchData]);
-
-  const fetchData = async () => {
+  const fetchData = useCallback(async () => {
     try {
       const response = await axios.get(
         API_URL + (selectedCategory ? `&category=${selectedCategory}` : "")
@@ -26,7 +22,11 @@ function TriviaSearch() {
     } catch (error) {
       console.error("Error fetching data:", error);
     }
-  };
+  }, [selectedCategory]);
+
+  useEffect(() => {
+    fetchData();
+  }, [fetchData]);
 
   const handleSearch = () => {
     fetchData();
