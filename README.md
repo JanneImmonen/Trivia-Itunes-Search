@@ -76,5 +76,7 @@ This project is licensed under the MIT License. See the [LICENSE](https://openso
 ## Acknowledgments
 
 Thanks to [Open Trivia Database](https://opentdb.com/) for providing trivia question data.
+
 Thanks to [iTunes Search API](https://performance-partners.apple.com/search-api) for providing album information.
+
 Thanks to [Create React App](https://github.com/facebook/create-react-app) for simplifying the React app setup process.
